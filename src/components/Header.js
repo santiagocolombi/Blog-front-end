@@ -1,33 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom'; // Importe o Link
-import HomePage from '../pages/HomePage';
+import {Navbar, NavItem, HeaderWrapper } from '../pages/styles/Header-styles'
 
-const HeaderWrapper = styled.header`
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-`;
 
-const Navbar = styled.nav`
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 10px;
-`;
-
-// Mude de 'a' para 'Link'
-const NavItem = styled(Link)`
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.2rem;
-
-  &:hover {
-    color: #ff6f61;
-    transition: color 0.3s ease;
-  }
-`;
 
 const Header = () => {
   return (

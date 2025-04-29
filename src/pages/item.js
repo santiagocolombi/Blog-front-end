@@ -8,7 +8,7 @@ const Item = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/items')
+    axios.get('http://localhost:3000/item')
       .then(response => {
         setItems(response.data);
       })
@@ -32,6 +32,7 @@ const Item = () => {
       ) : (
         <p>Não há itens disponíveis.</p>
       )}
+      
       <NavigationButton to="/">Voltar</NavigationButton>
     </PageLayout>
   );

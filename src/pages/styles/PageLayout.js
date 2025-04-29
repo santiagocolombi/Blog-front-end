@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 const PageContainer = styled.div`
-  max-width: 1200px;
+  max-width: 40%;
   margin: 0 auto;
   padding: 20px;
 `;
