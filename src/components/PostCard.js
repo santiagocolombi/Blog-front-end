@@ -5,7 +5,6 @@ import {
   PostImageStyled,
   ContentWrapper,
   Title,
-  Summary,
   ReadMore,
 } from '../pages/styles/PostCard-styles';
 
@@ -21,11 +20,7 @@ const PostCard = ({ post }) => {
       )}
       <ContentWrapper>
         <Title>{post.title}</Title>
-        <Summary>
-          {typeof post.content === 'string' 
-            ? post.content.substring(0, 150).replace(/\s\S*$/, '...') 
-            : ''}
-        </Summary>
+       
         <ReadMore href={`/posts/${post.id}`}>Leia mais</ReadMore>
       </ContentWrapper>
     </Card>

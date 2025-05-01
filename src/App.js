@@ -6,6 +6,7 @@ import PostPage from './pages/PostPage';
 import Personagens from './pages/Personagens';
 import Item from './pages/item';
 import Artefatos from './pages/Artefatos';
+import Guia from './pages/GuiaDePersonagem';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/item" element={<Item />} />
         <Route path="/personagens" element={<Personagens />} />
         <Route path="/artefatos" element={<Artefatos />} />
+        <Route path="/guia" element={<Guia/>} />
       </Routes>
     </Router>
   ); //Colocar as rotas em um arquivo de routes

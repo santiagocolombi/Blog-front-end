@@ -19,7 +19,7 @@ const Artefatos = () => {
 
   return (
     <PageLayout>
-      <h2>Artefatos</h2>
+      <h2 style={{ textAlign: 'center' }}>Artefatos</h2>
       {artefatos.length > 0 ? (
         <div>
           {artefatos.map(artefato => (
@@ -27,7 +27,7 @@ const Artefatos = () => {
           ))}
         </div>
       ) : (
-        <p>Não há artefatos disponíveis.</p>
+        <p style={{ textAlign: 'center' }}>Não há artefatos disponíveis.</p>
       )}
       <NavigationButton to="/"></NavigationButton>
     </PageLayout>

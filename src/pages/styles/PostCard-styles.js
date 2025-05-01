@@ -33,6 +33,8 @@ export const Title = styled.h3`
   color: #2c3e50;
   margin: 0 0 4px 0; /* Reduzi a margem inferior */
   line-height: 1.2; /* Espaçamento entre linhas mais compacto */
+
+
 `;
 
 export const Summary = styled.p`

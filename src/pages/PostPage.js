@@ -9,7 +9,6 @@ import {
   LoadingText,
   PostImage,
   HeaderPost,
-  Paragrafo,
   
 } from './styles/PostPage-styles';
 import NavigationButton from '../components/NavigationButton';
@@ -48,18 +47,21 @@ const PostPage = () => {
       <PostTitle>{post.title}</PostTitle>
       </HeaderPost>
       
-      <PostContent>
-        {post.content.split('\n').map((paragraph, i) => (
-          <Paragrafo key={i}>{paragraph}</Paragrafo>
-        ))}
-      </PostContent>
-    
+      
+      <PostContent dangerouslySetInnerHTML={{ __html: post.content }} />
+                                                         
+          
+        
+      
       <PostMeta>
         {post.created_at && (
-          <span>
+          <div>
             Publicado em: {new Date(post.created_at).toLocaleDateString('pt-BR')}
-          </span>
+          
+          </div>
+         
         )}
+         <div>Atualizado em : {new Date(post.updated_at).toLocaleDateString('pt-BR')}</div>
       </PostMeta>
   
       <NavigationButton to="/posts">Voltar aos Posts</NavigationButton>

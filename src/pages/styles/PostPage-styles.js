@@ -20,6 +20,7 @@ export const PostTitle = styled.h1`
   margin-bottom: 1.5rem;
   line-height: 1.3;
   padding-bottom: 1rem;
+  
 `;
 
 export const PostContent = styled.div`
@@ -28,17 +29,54 @@ export const PostContent = styled.div`
   font-size: 1.1rem;
   white-space: pre-line;
   word-break: break-word;
-  overflow-wrap: anywhere;
+  overflow-wrap: anwhere;
+  
 
-`;
+  /* Alinha divs que contêm imagem e parágrafo lado a lado */
+  div:has(img) {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    margin: 1rem 0;
+    border-top: 1px solid;
+    bottom: 1px solid;
+    padding-top: 5px ;
+    
+    
+  }
+  
+
+  div img {
+   
+    height: auto;
+    border-radius: 8px;
+  }
+
+  div p {
+    margin: 0;
+    flex: 1;
+    text-align: center;
+    
+  }
+ h2{
+  text-align: center;
+ }
+ footer {
+  text-align: center;
+  border-top: 1px solid;
+ }
+ `
+; 
 
 export const PostMeta = styled.div`
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
   color: #7f8c8d;
   margin: 2rem 0;
   font-size: 0.8rem;
+  text-align: center;
  
   
 `;
@@ -62,11 +100,7 @@ export const PostImage = styled.img`
 export const HeaderPost= styled.div`
   display: flex;
   gap: 20px;
+  justify-content: center;
  
   
-`;
-export const Paragrafo=styled.div`
-color: black;
-margin-top: 0px;
-
 `;

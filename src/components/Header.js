@@ -11,7 +11,7 @@ const Header = () => {
         <NavItem to="/">HomePage</NavItem>
         <NavItem to="/item">Itens</NavItem>
         <NavItem to="/personagens">Personagens</NavItem>
-        <NavItem to="/guias">Guias de Personagens</NavItem>
+        <NavItem to="/guia">Guias de Personagens</NavItem>
         <NavItem to="/artefatos">Artefatos</NavItem>
         <NavItem to="/curiosidades">Curiosidades</NavItem>
       </Navbar>

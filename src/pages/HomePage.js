@@ -1,28 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import PostCard from '../components/PostCard';
-import styled from 'styled-components';
 import AddPostButton from '../components/AddPostButton';
 import DeletePostButton from '../components/DeletePostButton'
-//sem receber page layout
-const HomeWrapper = styled.div`
-  width: 40%;
-  margin: 0 auto;
-  overflow-x: hidden;
-  box-sizing: border-box;
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centraliza todos os filhos */
+import { HomeWrapper } from './styles/HomePage-styles';
 
-  > * {
-    width: 100%;
-    max-width: 100%;
-  }
-`;
 
 const HomePage = () => {
   const [posts, setPosts] = useState([]);  // Estado para os posts
   const [error, setError] = useState(null); // Estado para erros
+  const [searchTerm, setSearchTerm] = useState('');
 
   // useEffect para buscar os posts da API
   useEffect(() => {
@@ -50,22 +36,37 @@ const HomePage = () => {
         console.error('Erro ao buscar posts:', error);  
       });
   }, []);
-  
+  const filteredPosts = posts.filter(post =>
+    post.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   
 
   return (
     <HomeWrapper>
-      <h2>Todos os posts</h2>
-      {error ? (
-        <p>Erro ao carregar posts: {error}</p> 
-      ) : posts.length > 0 ? (
-        posts.map((post) => <PostCard key={post.id} post={post} />) // Mapeia e exibe os posts
-      ) : (
-        <p>Carregando posts...</p> 
-      )}
-      <AddPostButton/>
-      <DeletePostButton/>
-    </HomeWrapper>
+    <h2>Todos os posts</h2>
+    <input
+      type="text"
+      placeholder="Buscar Post específico..."
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+    />
+    {error ? (
+      <p>Erro ao carregar posts: {error}</p>
+    ) : filteredPosts.length > 0 ? (
+      filteredPosts.map((post) => <PostCard key={post.id} post={post} />)
+    ) : (
+      <div style={{ textAlign: 'center' }}>
+        <img
+          src="http://localhost:3000/uploads/1746108165317-Triste.png"
+          alt="Imagem ilustrativa de item não encontrado"
+          style={{ width: '200px', marginBottom: '20px' }}
+        />
+        <p>Nenhum post encontrado.</p>
+      </div>
+    )}
+    <AddPostButton />
+    <DeletePostButton />
+  </HomeWrapper>
   );
 };
 

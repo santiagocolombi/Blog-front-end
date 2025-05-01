@@ -14,7 +14,8 @@ export default function AddPostButton() {
   const [showForm, setShowForm] = useState(false);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [category, setCategory] = useState('geral');  // Estado para a categoria
+  const [category, setCategory] = useState('geral');  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -61,6 +62,7 @@ export default function AddPostButton() {
             <Option value="item">Item</Option>
             <Option value="personagem">Personagem</Option>
             <Option value="artefato">Artefato</Option>
+            <Option value="guia">Guia</Option>
           </Select>
           <SubmitButton onClick={handleSubmit}>
             Criar Post
